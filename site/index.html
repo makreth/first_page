@@ -2,8 +2,76 @@
 <html>
 <head>
 	<title>Hello</title>
+<style>
+	h1{
+		color:blue;
+		border: dotted black;
+	}
+	h1:hover{
+		color:purple;
+		border: solid green;
+		font-family: Arial;
+	}
+	.picture{
+		display: flex;
+		height: 250px;
+	}
+
+	img{
+		width: 300px;
+	}
+</style>
 </head>
+
 <body>
-	<h1> Hello World!</h1>
+  <h1>Look baby! I'm coding in HTML! </h1>
+	<div id = "panel">
+	</div>
+<script>
+		var images = [
+		"https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/29594903_1706574696074839_1069912275975407301_n.jpg?_nc_cat=100&oh=6a82dbf0bf70bea568568fd16c9045e2&oe=5C481786",
+		"https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/31403977_1740570499341925_2249770136695209984_n.jpg?_nc_cat=104&oh=b3ab58fa632a727567379b68088e3406&oe=5C4DFF61",
+		"https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/25442969_1603270703071906_2281023723539653690_n.jpg?_nc_cat=102&oh=64da6ee30aad513927c63f16feb3be9c&oe=5C447BF6",
+		"https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-9/26219531_1615498341849142_2595144261563015658_n.jpg?_nc_cat=106&oh=8d4ea70631c887eedcca86d93a2f6a31&oe=5C532535",
+		"https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/25488345_1603270723071904_2020520944392749306_o.jpg?_nc_cat=108&oh=467bd88c014e01be433703d679683257&oe=5C518D5A",
+		"https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/25542372_1603270806405229_6411238690178503229_o.jpg?_nc_cat=105&oh=a302582d0609736e2cfe90a1f1a5b693&oe=5C4109E2"
+		];
+
+		class GridPhoto{
+			constructor(){
+				this.contents=[
+					[0,1,2],
+					[2,3,4],
+					[4,0,5]
+				];
+				var st = "";
+				for (var r = 0; r < 3; r++){
+					st += `<div class = "picture">`;
+					for (var c = 0; c < 3; c++){
+						var index = this.contents[r][c];
+						st += `<img id = "`+ String(r) + String(c) + `"src = "` + images[index] + `" onclick = "main.switchPhoto()">`;
+          }
+					st += `</div>`;
+				}
+				document.getElementById("panel").innerHTML = st;
+				console.log(st);
+			}
+
+			switchPhoto(){
+				var currDiv = event.target;
+				var currX = currDiv.id.substr(0,1);
+				var currY = currDiv.id.substr(1,1);
+       		 	this.contents[currX][currY]+=1;
+				if (this.contents[currX][currY] > 5){
+					this.contents[currX][currY] = 0;
+				}
+				currDiv.src = images[this.contents[currX][currY]];
+			}
+		}
+    var main = new GridPhoto();
+
+	</script>
+	
+	
 </body>
 </html>
