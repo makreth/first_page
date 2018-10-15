@@ -1,0 +1,84 @@
+*{
+	box-sizing: border-box;
+}
+
+body{
+	background-image: url("https://wallpaperstudio10.com/static/wpdb/wallpapers/1920x1080/193836.jpg");
+}
+
+h1{
+	font-family: Arial, sans-serif;
+	margin: auto;
+	text-align: center;
+	background-color:rgb(153, 186, 239, 0.25);
+	width: 50%;
+}
+
+h3{
+	position: relative;
+	bottom: 2px;
+	left: 2px;
+	float: right;
+	text-align: center;
+	border: 2px solid black;
+	padding: 2px;
+	width: 245px;
+	margin: 0px;
+	font-family: Arial, sans-serif;
+}
+
+#chicken{
+	background-color: rgb(226, 234, 72);
+}
+
+#satay{
+	background-color: rgb(234, 134, 72);
+}
+
+#crab{
+	background-color: rgb(79, 63, 49);
+	color: white;
+}
+
+
+p{
+	clear:right;
+	padding: 10px;
+}
+
+.menu{
+	width: 100%;
+}
+
+.item{
+	float: left;
+	background-color:rgb(218, 227, 242,0.75);
+	border: 2px solid black;
+	position: relative;
+	padding: 0px;
+	margin: 1%;
+}
+
+@media (min-width: 992px){
+	.col-lg-4{
+		width: 31.33%;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+	.col-md-6{
+		width: 48%;
+		height: 220px;
+	}
+
+	.col-md-12{
+		width: 98%;
+		height: 150px;
+	}
+}
+
+@media (max-width: 767px){
+	.col-sm-12{
+		width: 98%;
+	}
+}
