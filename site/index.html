@@ -4,13 +4,14 @@
 	<title>Hello</title>
 <style>
 	h1{
+		display: block;
 		color:blue;
 		border: dotted black;
-	}
-	h1:hover{
-		color:purple;
-		border: solid green;
-		font-family: Arial;
+		text-align: center;
+		width: fit-content;
+		margin-left: auto;
+		margin-right: auto;
+		
 	}
 	.picture{
 		display: flex;
@@ -20,11 +21,18 @@
 	img{
 		width: 300px;
 	}
+	
+	#header{
+		width: 900px;
+	}
+	
 </style>
 </head>
 
 <body>
-  <h1>Interactive Collage </h1>
+	<div id = "header">
+	<h1>Photo Switch</h1>
+	</div>
 	<div id = "panel">
 	</div>
 <script>
